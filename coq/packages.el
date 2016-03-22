@@ -3,7 +3,7 @@
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
 ;; Author: Eric Bailey <eric@ericb.me>
-;; URL: https://github.com/yurrriq/spacemacs-coq
+;; URL: https://github.com/yurrriq/spacemacs-private/blob/master/coq/packages.el
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
