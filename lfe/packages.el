@@ -23,23 +23,25 @@
            (define-lfe-indent
              ;; defmodule
              (from   1)
+             (rename   1)
              (import 0)
 
              ;; exemplar
              (body    0)
-             (div     1)
+             ;; (div     1)
+             (div     'defun)
              (head    0)
              (html    'defun)
              (link-to 1)
              (pre     1)
+             (span    'defun)
              (ul      0)
-             (span 'defun)
-             (div 'defun)
 
              (try 0)
 
              ;; (main 0)
-             ;; (list 0)
+             (list 0)
+             ;; (list 'defun)
 
              (GET 1)
              (POST 1)
@@ -49,17 +51,17 @@
              (lodox-util:when* 1)
 
              ;; lists
-             (lists:map   'defun)
+             (lists:all       'defun)
+             (lists:any       'defun)
              (lists:dropwhile 'defun)
-             (lists:filter   'defun)
-             (lists:filtermap   'defun)
-             (lists:foldl 'defun)
-             (lists:sort  'defun)
+             (lists:filter    'defun)
+             (lists:filtermap 'defun)
+             (lists:foldl     'defun)
+             (lists:foreach   'defun)
              (lists:keydelete 'defun)
-             (lists:foreach  'defun)
-             (lists:member 'defun)
-             (lists:any 'defun)
-             (lists:all 'defun)
+             (lists:map       'defun)
+             (lists:member    'defun)
+             (lists:sort      'defun)
 
              (maps:fold 'defun)
 
@@ -76,6 +78,9 @@
              (logjam:set-level 'defun)
 
              (io_lib:format 'defun)
+             (io:format 'defun)
+             (io:fwrite 'defun)
+             (lfe_io:format 'defun)
 
              (fold-replace 'defun)
              (iff 'defun)
@@ -84,12 +89,32 @@
              (dojo-mnesia:list-data 'defun)
              (set-course-masters 'defun)
              (query-data 'defun)
+             ;; (set-Course 'defun)
+             (set-LessonGroup 'defun)
+             ;; (set-Lesson 'defun)
+             (try-create 'defun)
 
-             (list 'defun)
 
              ;; dragon
              (base-page 'defun)
-             (main 'defun))
-           (add-hook 'lfe-mode-hook 'paredit-mode)
-           (add-hook 'lfe-mode-hook 'rainbow-delimiters-mode)
-           (add-hook 'lfe-mode-hook 'auto-complete-mode))))
+             (main 'defun)
+
+             (doto 'defun)
+
+             (binary 'defun)
+
+             ;; lmug-lint
+             (lint 'defun)
+
+             ;; hackey
+             (hackney_cookie:setcookie 'defun)
+
+             ;; rebar
+             (rebar_api:console 'defun)
+             (rebar_api:debug 'defun)
+
+             (if-found 'defun)
+
+             (funcall 'defun))
+           (dolist (func '(paredit-mode rainbow-delimiters-mode auto-complete-mode))
+             (add-hook 'lfe-mode-hook func)))))
