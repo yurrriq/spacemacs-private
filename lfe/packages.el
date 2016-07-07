@@ -3,18 +3,24 @@
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
 ;; Author: Eric Bailey <eric@ericb.me>
-;; URL: https://github.com/yurrriq/spacemacs-private/blob/master/lfe/packages.el
+;; URL: https://github.com/yurrriq/spacemacs-private/tree/master/lfe
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-(setq lfe-packages '(lfe-mode dash-at-point))
+;;; Commentary:
+
+;;; Code:
+
+(defconst lfe-packages '(lfe-mode dash-at-point)
+  "The list of Lisp packages required by the LilyPond layer.")
 
 (defun lfe/init-lfe-mode ()
+  "Initialize `lfe-mode'."
   (use-package lfe-mode
     :defer     t
-    :mode      ("\\.lfe\\'" . lfe-mode)
+    :mode      '("\\.lfe\\'" . lfe-mode)
     :load-path "~/src/rvirding/lfe/emacs"
     :config    (progn
                  (require 'lfe-start)
@@ -93,7 +99,6 @@
                    ;; (set-Lesson 'defun)
                    (try-create 'defun)
 
-
                    ;; dragon
                    (base-page 'defun)
                    (main 'defun)
@@ -116,10 +121,13 @@
 
                    (if-found 'defun)
 
-                   (funcall 'defun))
+                   ;; FIXME: Does this work?
+                   `(funcall defun))
                  (dolist (func '(paredit-mode
                                  rainbow-delimiters-mode
                                  auto-complete-mode))
                    (add-hook 'lfe-mode-hook func))
                  (add-to-list 'dash-at-point-mode-alist
                               '(lfe-mode . "erlang")))))
+
+;;; packages.el ends here
