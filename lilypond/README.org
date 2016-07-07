@@ -1,17 +1,15 @@
-#+TITLE: lilypond layer
+#+TITLE: LilyPond layer
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
 
-#+CAPTION: logo
-
-# The maximum height of the logo should be 200 pixels.
-[[img/lilypond.png]]
+#+CAPTION: LilyPond logo
+[[http://lilypond.org/pictures/double-lily-modified3.png]]
 
 * Table of Contents                                        :TOC_4_org:noexport:
- - [[Decsription][Description]]
+ - [[Description][Description]]
  - [[Install][Install]]
  - [[Key bindings][Key bindings]]
 
-* Description
+* TODO Description
 This layer does wonderful things:
   - thing01
 
@@ -19,10 +17,10 @@ This layer does wonderful things:
 To use this contribution add it to your =~/.spacemacs=
 
 #+begin_src emacs-lisp
-  (setq-default dotspacemacs-configuration-layers '(lilypond))
+(setq-default dotspacemacs-configuration-layers '(lilypond))
 #+end_src
 
-* Key bindings
+* TODO Key bindings
 
 | Key Binding     | Description    |
 |-----------------+----------------|
