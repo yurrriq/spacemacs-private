@@ -9,7 +9,7 @@
 ;;
 ;;; License: GPLv3
 
-(setq lfe-packages '(lfe-mode))
+(setq lfe-packages '(lfe-mode dash-at-point))
 
 (defun lfe/init-lfe-mode ()
   (use-package lfe-mode
@@ -107,6 +107,8 @@
 
                    ;; hackey
                    (hackney_cookie:setcookie 'defun)
+                   (hackney:get 'defun)
+                   (hackney:post 'defun)
 
                    ;; rebar
                    (rebar_api:console 'defun)
@@ -118,4 +120,6 @@
                  (dolist (func '(paredit-mode
                                  rainbow-delimiters-mode
                                  auto-complete-mode))
-                   (add-hook 'lfe-mode-hook func)))))
+                   (add-hook 'lfe-mode-hook func))
+                 (add-to-list 'dash-at-point-mode-alist
+                              '(lfe-mode . "erlang")))))
