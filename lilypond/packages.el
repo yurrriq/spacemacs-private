@@ -2,8 +2,8 @@
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Mo Hacker <mohacker@TheMatrix>
-;; URL: https://github.com/syl20bnr/spacemacs
+;; Author: Eric Bailey <eric@ericb.me>
+;; URL: https://github.com/yurrriq/spacemacs-private/tree/master/lilypond
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -11,32 +11,16 @@
 
 ;;; Commentary:
 
-;; See the Spacemacs documentation and FAQs for instructions on how to implement
-;; a new layer:
-;;
-;;   SPC h SPC layers RET
-;;
-;;
-;; Briefly, each package to be installed or configured by this layer should be
-;; added to `lilypond-packages'. Then, for each package PACKAGE:
-;;
-;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `lilypond/init-PACKAGE' to load and initialize the package.
-
-;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `lilypond/pre-init-PACKAGE' and/or
-;;   `lilypond/post-init-PACKAGE' to customize the package as it is loaded.
-
 ;;; Code:
 
 (defconst lilypond-packages '(lilypond-mode)
-  "The list of Lisp packages required by the lilypond layer.")
+  "The list of Lisp packages required by the LilyPond layer.")
 
 (defun lilypond/init-lilypond-mode ()
-  "Initialize lilypond."
-  (use-package LilyPond-mode
+  "Initialize `lilypond-mode'."
+  (use-package lilypond-mode
     :defer     t
-    :mode      ("\\.i?ly\\'" . LilyPond-mode)
+    :mode      '("\\.i?ly\\'" . LilyPond-mode)
     :load-path "/usr/local/share/emacs/site-lisp/lilypond"
     :config    (progn
                  (add-hook 'LilyPond-mode-hook
