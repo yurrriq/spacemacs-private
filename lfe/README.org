@@ -1,10 +1,10 @@
 #+STARTUP: showall
-#+TITLE: LilyPond Layer
+#+TITLE: LFE Layer
 #+AUTHOR: Eric Bailey
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
 
-#+CAPTION: LilyPond logo
-[[http://lilypond.org/pictures/double-lily-modified3.png]]
+#+CAPTION: LFE logo
+[[https://raw.githubusercontent.com/lfe/docs3/master/priv/static/images/logos/lfe-tiny.png]]
 
 * Table of Contents                                        :TOC_4_org:noexport:
  - [[Description][Description]]
@@ -19,7 +19,7 @@ This layer does wonderful things:
 To use this contribution add it to your =~/.spacemacs=
 
 #+begin_src emacs-lisp
-(setq-default dotspacemacs-configuration-layers '(lilypond))
+(setq-default dotspacemacs-configuration-layers '(lfe))
 #+end_src
 
 * TODO Key bindings
