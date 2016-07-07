@@ -20,7 +20,7 @@
   "Initialize `lilypond-mode'."
   (use-package lilypond-mode
     :defer     t
-    :mode      '("\\.i?ly\\'" . LilyPond-mode)
+    :mode      ("\\.i?ly\\'" . LilyPond-mode)
     :load-path "/usr/local/share/emacs/site-lisp/lilypond"
     :config    (progn
                  (add-hook 'LilyPond-mode-hook

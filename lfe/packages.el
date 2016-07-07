@@ -20,7 +20,7 @@
   "Initialize `lfe-mode'."
   (use-package lfe-mode
     :defer     t
-    :mode      '("\\.lfe\\'" . lfe-mode)
+    :mode      ("\\.lfe\\'" . lfe-mode)
     :load-path "~/src/rvirding/lfe/emacs"
     :config    (progn
                  (require 'lfe-start)
