@@ -13,7 +13,7 @@
 
 ;;; Code:
 
-(defconst lfe-packages '(lfe-mode dash-at-point)
+(defconst lfe-packages '(lfe-mode rainbow-delimiters dash-at-point)
   "The list of Lisp packages required by the LilyPond layer.")
 
 (defun lfe/init-lfe-mode ()
@@ -61,12 +61,14 @@
                    (lists:dropwhile 'defun)
                    (lists:filter    'defun)
                    (lists:filtermap 'defun)
+                   (lists:flatmap   'defun)
                    (lists:foldl     'defun)
                    (lists:foreach   'defun)
                    (lists:keydelete 'defun)
                    (lists:map       'defun)
                    (lists:member    'defun)
                    (lists:sort      'defun)
+                   (lists:mapfoldl  'defun)
 
                    (maps:fold 'defun)
 
@@ -122,10 +124,43 @@
                    (if-found 'defun)
 
                    ;; FIXME: Does this work?
-                   `(funcall defun))
+                   ;; `(funcall defun)
+
+                   ;; prometheus
+                   (prometheus_histogram:observe 'defun)
+
+                   ;; dojo
+                   (maybe-handle 'defun)
+
+                   (clj:as-> 'defun)
+                   (as-> 'defun)
+                   (clj:cond-> 'defun)
+                   (cond-> 'defun)
+                   (clj:cond->> 'defun)
+                   (cond->> 'defun)
+                   (clj:if-not 'defun)
+                   (clj:iff 'defun)
+                   (clj:doto 'defun)
+                   (clj:condp 'defun)
+                   (set-Course 'defun)
+                   (clj:defn 'defun)
+                   (defn 'defun)
+                   (if-not 'defun)
+
+                   (create-table 'defun)
+
+                   (ul 'defun)
+
+                   (edoc_report:report 'defun)
+                   (edoc_report:warning 'defun)
+                   )
+                 (put-lfe-indent 'funcall 'defun)
                  (dolist (func '(paredit-mode
                                  rainbow-delimiters-mode
-                                 auto-complete-mode))
+                                 auto-complete-mode
+                                 hl-todo-mode
+                                 prettify-symbols-mode
+                                 yas-minor-mode))
                    (add-hook 'lfe-mode-hook func))
                  (add-to-list 'dash-at-point-mode-alist
                               '(lfe-mode . "erlang")))))

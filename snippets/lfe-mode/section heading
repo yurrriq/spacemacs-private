@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: section heading
+# contributor: Eric Bailey
+# key: section
+# binding: C-c C-s
+# --
+;;; `(make-string (- 71 (string-width yas-selected-text)) ?=)` [ $0 ]
+$1
